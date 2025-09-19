@@ -1,7 +1,9 @@
 #include "sl.h"
 #include "paddle.h"
+#include "gameplay.h"
+#include "windowManagment.h"
 
-/*namespace projectBreakOut
+namespace projectBreakOut
 {
 	Paddle initPaddle(float x, float y, float w, float h, float speedX, string name, int points, bool winner)
 	{
@@ -21,10 +23,10 @@
 
 	void player1Movement(Paddle& player)
 	{
-		if (IsKeyDown(KEY_W))
-			player.posY -= paddleSpeedY * GetFrameTime();
-		else if (IsKeyDown(KEY_S))
-			player.posY += paddleSpeedY * GetFrameTime();
+		if (slGetKey(SL_KEY_LEFT))
+			player.posY -= paddleSpeedX * slGetDeltaTime();
+		else if (slGetKey(SL_KEY_RIGHT))
+			player.posY += paddleSpeedX * slGetDeltaTime();
 	}
 
 	void paddleScreenCollision(Paddle& player)
@@ -33,9 +35,9 @@
 		{
 			player.posY = 0;
 		}
-		else if (player.posY >= (GetScreenHeight() - paddleH))
+		else if (player.posY >= (screenHeight - paddleW))
 		{
-			player.posY = (GetScreenHeight() - paddleH);
+			player.posY = (screenHeight - paddleW);
 		}
 	}
 
@@ -86,24 +88,6 @@
 		player.isHit = true;
 	}
 
-	void checkPlayerGoal(Paddle& player, Ball& ball)
-	{
-		if (ball.posX >= (GetScreenWidth() - 10.0f))
-		{
-			player.points++;
-			ball.newKickOff = true;
-		}
-	}
-
-	void checkAIGoal(Paddle& AI, Ball& ball)
-	{
-		if (ball.posX <= 10.0f)
-		{
-			AI.points++;
-			ball.newKickOff = true;
-		}
-	}
-
 	float ballPaddleCollision(Ball ball, Paddle paddle)
 	{
 		float testX = ball.posX;
@@ -134,4 +118,4 @@
 
 		return distanceXY;
 	}
-}*/
+}

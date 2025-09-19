@@ -8,7 +8,7 @@ namespace projectBreakOut
 	void runGame()
 	{
 		//initWindow
-		slWindow(screen_width, screen_hight, "projectBreakOut", false);
+		slWindow(screenWidth, screenHeight, "projectBreakOut", false);
 
 		while (!slShouldClose())
 		{

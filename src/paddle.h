@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
-
 #include "ball.h"
-#include "gameplay.h"
 
 namespace projectBreakOut
 {
@@ -25,8 +23,8 @@ namespace projectBreakOut
 	};
 
 	//constants
-	const int paddleH = 120;
-	const int paddleW = 20;
+	const int paddleH = 20;
+	const int paddleW = 120;
 
 	const float paddleSpeedX = 250.0f;
 
