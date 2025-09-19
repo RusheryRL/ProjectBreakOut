@@ -12,11 +12,12 @@ namespace projectBreakOut
 
 		while (!slShouldClose())
 		{
+			//init
+
+			//update
+
 			//texturas a dibujar
 			slSetBackColor(0.5, 0.75, 1.0);
-
-			slSetForeColor(1, 0, 0, 1);
-			slRectangleFill(screen_width /2, screen_hight /5, 200, 50);
 
 
 			//hace el dibujado
