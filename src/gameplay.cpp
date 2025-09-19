@@ -17,7 +17,7 @@ namespace projectBreakOut
 			//update
 
 			//texturas a dibujar
-			slSetBackColor(0.5, 0.75, 1.0);
+			slSetBackColor(0, 0, 0);
 
 
 			//hace el dibujado
