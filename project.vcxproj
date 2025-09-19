@@ -132,6 +132,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)\lib\sigil\include%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sigil.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Agregando Dlls y resources...</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -152,6 +158,12 @@
       <AdditionalDependencies>sigil.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Agregando Dlls y resources...</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
