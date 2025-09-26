@@ -25,16 +25,17 @@ namespace projectBreakOut
 	//constants
 	const int paddleH = 20;
 	const int paddleW = 120;
+	const int playerLifePoints = 3;
 
 	const float paddleSpeedX = 250.0f;
 
 	//functions
 	Paddle initPaddle(float x, float y, float w, float h, float speedX, string name, int points, bool winner);
 
-	void player1Movement(Paddle& player);
+	void playerMovement(Paddle& player);
 	void paddleScreenCollision(Paddle& player);
 	void checkWin(Paddle& paddle);
-	void player1Collision(Ball& ball, Paddle& player);
+	void playerCollision(Ball& ball, Paddle& player);
 
 	float ballPaddleCollision(Ball ball, Paddle paddle);
 }

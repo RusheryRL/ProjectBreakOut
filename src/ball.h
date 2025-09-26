@@ -20,8 +20,10 @@ namespace projectBreakOut
 
 	//functions
 	Ball initBall(float x, float y, float r, float speedX, float speedY);
+
 	void ballMovement(Ball& ball);
 	void ballScreenCollision(Ball& ball);
+
 	bool resetBall(Ball& ball);
 }
 

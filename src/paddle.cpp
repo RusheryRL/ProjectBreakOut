@@ -21,23 +21,23 @@ namespace projectBreakOut
 		return paddle;
 	}
 
-	void player1Movement(Paddle& player)
+	void playerMovement(Paddle& player)
 	{
 		if (slGetKey(SL_KEY_LEFT))
-			player.posY -= paddleSpeedX * slGetDeltaTime();
+			player.posX -= paddleSpeedX * slGetDeltaTime();
 		else if (slGetKey(SL_KEY_RIGHT))
-			player.posY += paddleSpeedX * slGetDeltaTime();
+			player.posX += paddleSpeedX * slGetDeltaTime();
 	}
 
 	void paddleScreenCollision(Paddle& player)
 	{
-		if (player.posY <= 0)
-		{
-			player.posY = 0;
+		if (player.posX <= paddleW / 2)
+		{	
+			player.posX = paddleW / 2;
 		}
-		else if (player.posY >= (screenHeight - paddleW))
+		else if (player.posX >= (screenWidth - paddleW/2))
 		{
-			player.posY = (screenHeight - paddleW);
+			player.posX = (screenWidth - paddleW / 2);
 		}
 	}
 
@@ -49,7 +49,7 @@ namespace projectBreakOut
 		}
 	}
 
-	void player1Collision(Ball& ball, Paddle& player)
+	void playerCollision(Ball& ball, Paddle& player)
 	{
 		if (ballPaddleCollision(ball, player) <= ball.r)
 		{
@@ -63,26 +63,6 @@ namespace projectBreakOut
 				ball.posX += ball.r;
 				ball.posY += ball.r;
 				ball.speedX *= -1.1f;
-			}
-		}
-		player.isHit = true;
-	}
-
-	void player2Collision(Ball& ball, Paddle& player)
-	{
-		if (ballPaddleCollision(ball, player) <= ball.r)
-		{
-			if (ball.posX >= player.posX - paddleW - ball.r)
-			{
-				ball.posX -= ball.r;
-				ball.speedX *= -1.1f;
-			}
-			else if (ball.posX >= player.posX - paddleW - ball.r && ball.posY >= player.posY + paddleH + ball.r)
-			{
-				ball.posX -= ball.r;
-				ball.posY -= ball.r;
-				ball.speedX *= -1.1f;
-
 			}
 		}
 		player.isHit = true;

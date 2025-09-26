@@ -2,6 +2,6 @@
 
 namespace projectBreakOut
 {
-	const int screenWidth = 900;
-	const int screenHeight = 600;
+	const int screenWidth = 600;
+	const int screenHeight = 900;
 }
