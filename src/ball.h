@@ -14,8 +14,8 @@ namespace projectBreakOut
 	};
 
 	//constants
-	const float ballSpeedX = 250.0f;
-	const float ballSpeedY = 150.0f;
+	const float ballSpeedX = 150.0f;
+	const float ballSpeedY = 50.0f;
 	const float ballRadio = 10.0f;
 
 	//functions

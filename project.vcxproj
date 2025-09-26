@@ -133,7 +133,8 @@
       <AdditionalDependencies>sigil.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y</Command>
+      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y
+xcopy "$(SolutionDir)res "$(OutDir)\res" /s /y /i</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Agregando Dlls y resources...</Message>
@@ -159,7 +160,8 @@
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y</Command>
+      <Command>copy "$(SolutionDir)lib\sigil\*.dll" "$(OutDir)" /y
+xcopy "$(SolutionDir)res "$(OutDir)\res" /s /y /i</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Agregando Dlls y resources...</Message>

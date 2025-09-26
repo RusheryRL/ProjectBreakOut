@@ -31,13 +31,13 @@ namespace projectBreakOut
 
 	void paddleScreenCollision(Paddle& player)
 	{
-		if (player.posX <= paddleW / 2)
+		if (player.posX <= paddleW / 2.0f)
 		{	
-			player.posX = paddleW / 2;
+			player.posX = paddleW / 2.0f;
 		}
-		else if (player.posX >= (screenWidth - paddleW/2))
+		else if (player.posX >= (screenWidth - paddleW / 2.0f))
 		{
-			player.posX = (screenWidth - paddleW / 2);
+			player.posX = (screenWidth - paddleW / 2.0f);
 		}
 	}
 
@@ -53,12 +53,12 @@ namespace projectBreakOut
 	{
 		if (ballPaddleCollision(ball, player) <= ball.r)
 		{
-			if (ball.posX <= player.posX + paddleW + ball.r)
+			if (ball.posX <= player.posX + (paddleW / 2.0f) + ball.r)
 			{
 				ball.posX += ball.r;
 				ball.speedX *= -1.1f;
 			}
-			else if (ball.posX <= player.posX + paddleW + ball.r && ball.posY >= player.posY + paddleH + ball.r)
+			else if (ball.posX <= player.posX + (paddleW / 2)+ ball.r && ball.posY >= player.posY + (paddleH / 2) + ball.r)
 			{
 				ball.posX += ball.r;
 				ball.posY += ball.r;

@@ -1,6 +1,8 @@
 #include "ball.h"
 #include "sl.h"
 #include "windowManagment.h"
+#include "iostream"
+using namespace std;
 
 namespace projectBreakOut
 {
@@ -25,11 +27,17 @@ namespace projectBreakOut
 
 	void ballScreenCollision(Ball& ball)
 	{
-		if (ball.posY >= (screenHeight - ball.r) || ball.posY <= ball.r)
+		if (ball.posY >= (screenHeight - (ball.r / 2.0f)) || ball.posY <= ball.r / 2.0f)
+		{
+			cout << "tap" << endl;
 			ball.speedY *= -1.0f;
+		}
 
-		if (ball.posX >= (screenWidth - ball.r) || ball.posX <= ball.r)
+		if (ball.posX >= (screenWidth - (ball.r / 2.0f)) || ball.posX <= ball.r / 2.0f)
+		{
+			cout << "tap" << endl;
 			ball.speedX *= -1.0f;
+		}
 	}
 
 	bool resetBall(Ball& ball)
